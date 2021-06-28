@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/auth/login.css","webpack://src/components/foro/css.css"],"names":[],"mappings":"AAEA,OACI,eACJ,CCHA,YACI,WACJ","file":"main.2e5f5e30.chunk.css","sourcesContent":["\r\n\r\n.mt-60{\r\n    margin-top: 60px;\r\n}","\r\n.margin-all{\r\n    margin: 10px;\r\n}\r\n\r\n"]}
