@@ -6,13 +6,27 @@ const Pregunta = require('../models/pregunta');
 
 const getPreguntas = async (req = request, res = response) => {
 
+   const {tematica} = req.query;
 
+   
     try {
-        const preguntas = await Pregunta.findAll({
-            include: 'respuestas'
-        });
-        console.log(preguntas);
-        res.status(200).json({ preguntas });
+        if (!!tematica) {
+            const preguntas = await Pregunta.findAll({
+                where: {
+                    tematicaId:tematica 
+                },
+                include: ['respuestas', 'tematica']
+            });
+            
+            res.status(200).json({ preguntas });
+            
+        }else{
+            const preguntas = await Pregunta.findAll({
+                include: ['respuestas', 'tematica']
+            });
+            
+            res.status(200).json({ preguntas });
+        }
     } catch (error) {
         console.log(error);
         res.status(500).json({
@@ -53,7 +67,7 @@ const crearPreguntas = async (req = request, res = response) => {
     try {
 
         const pregunta = new Pregunta(req.body);
-        console.log(req.body);
+        
         await pregunta.save();
         res.json({ pregunta });
 

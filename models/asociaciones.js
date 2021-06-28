@@ -17,5 +17,5 @@ Respuesta.belongsTo(Pregunta,{as: 'pregunta'});
 
 
 //Una tematica tiene muchas preguntas
-Tematica.hasMany(Pregunta);
-Pregunta.belongsTo(Tematica);
+Tematica.hasMany(Pregunta, {as: 'preguntas', foreignKey:'tematicaId'});
+Pregunta.belongsTo(Tematica, {as:'tematica'});

@@ -13,7 +13,7 @@ const login = async(req=request, res= response) => {
             where:{nombre},
             include:'preguntas'
         });
-        console.log(usuario);
+        
         const [data] = usuario;
         
 
