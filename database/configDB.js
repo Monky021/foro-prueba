@@ -12,7 +12,7 @@ const db = new Sequelize(process.env.DBNOMBRE, process.env.DBUSUARIO, process.en
     }
 
 });
-console.log(process.env.DBNOMBRE);
+
 
 //const db = new Sequelize(process.env.DATABASE_URL);
 
